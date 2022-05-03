@@ -1,0 +1,138 @@
+<html>
+    <head>
+    <title>CSS</title>
+    <script language="javascript">
+        const emailRegex = 
+        /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;//이메일
+        const passwordRegex =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/; 
+        //최소 8자, 하나 이상의 대문자, 하나의 소문자 및 하나의 숫자
+        const phoneNumberRegex =/^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+        //앞자리가 01이며 (0,1,6,7,8,9) 이며 중간에 3~4자리, 세번째는 4자리인 전화번호
+        const emailValueCheck = emailRegex.test(userId);
+        const passwordValueCheck = passwordRegex.test(userPassword);
+        const phoneNumberValueCheck = phoneNumberRegex.test(userId);
+        
+        const isUserValid =
+        (emailValueCheck || phoneNumberValueCheck) && passwordValueCheck;
+    </script>
+    </head>
+    <body>  
+        <form action="mailto:iwebgenie@gmail.com?subject=안녕하세요"
+        className = "loginButton"
+        type = "button"
+        disabled={!isUserValid}
+        onClick= {goToMain}
+        >  <!-- 액션 폼 실행문 -->
+        <table border="3" bordercolor="skyblue" width ="700" height="600" align = "center" ><!-- 테투리 스타일,너비설정 -->
+            <tr bgcolor="skyblue" align ="center">  
+                <h3><td height="40" colspan = "7" span style="skyblue"><b>회원 기본 정보</b></h3></td> <!--테이블 헤드 -->
+            </tr>
+            <tr bgcolor="white"> 
+                <td align="center" width ="150""> <b>아이디:</b></td> 
+                <td colspan = "7" ><input type="text" id="userId" size="20"> 4~12자의 영문 대소문자와 숫자로만 입력 <!--텍스트타입의 공간 생성-->
+            </tr>
+            <tr>
+                <td align="center"><b>비밀번호:</b></td> 
+                <td colspan = "7" ><input type="password" name="my_name" size="20"> 4~12자의 영문 대소문자와 숫자로만 입력 <!--패스워드 타입의 공간 생성-->
+            </tr>
+
+            <tr>
+                <td align="center"><b>비밀번호확인:</b></td>
+                <td colspan = "7" ><input type="password" name="my_name" size="20">
+            </tr>
+            <tr>
+                <td align="center"><b>메일주소:</b></td>
+                <td colspan = "7" ><input type="text" name="my_name" size="25"> 예)id@domain.com
+            </tr>
+            <tr>
+                <td align="center"><b>이름:</b></td>
+                <td colspan = "7" ><input type="text" name="my_name" size="25">
+            </tr>
+            <tr>
+                <tr bgcolor="skyblue" align ="center">
+               <h3><td height="40" colspan = "7" span style="skyblue" ><b>개인 신상 정보</b></h3></td>
+            </tr>
+            <tr>
+                <td align="center"><b>주민등록번호:</b></td>
+                <td colspan = "7" ><input type="text" name="my_name" size="25"> 예)1234561234567
+            </tr>
+            </tr>
+            <tr>
+                <td align="center"><b>생일:</b></td>
+                <td colspan = "6" ><input type="" name="my_name" size="10" value>년 
+                    <select name="1"> <!--셀렉문 여러가지중의 선택 할 수 있는 박스 생성 -->
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value=11">11</option>
+                    <option value="12">12</option>
+                </select>월 <!-- 첫번째 셀렉문 종료-->
+                <select name="1">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value=11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value=23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>일  <!-- 2번째 셀렉문 종료-->
+            <tr>
+                <td align="center"><b>관심분야:</b>
+                <td colspan = "7" > 
+                    <input type="checkbox" name="관심분야" value="컴퓨터">컴퓨터     <!--체크박스 타입의 박스 생성 -->
+                    <input type="checkbox" name="관심분야" value="인터넷">인터넷
+                    <input type="checkbox" name="관심분야" value="여행">여행
+                    <input type="checkbox" name="관심분야" value="영화감상">영화감상
+                    <input type="checkbox" name="관심분야" value="음악감상">음악감상</td>
+            </tr>
+            <tr>
+                <td align="center"><b>자기소개:</b></td>
+                <td width="530"><textarea name="my_intro" cols="60" rows="7"></textarea></td> <!--textarea = 텍스트를 쓸 수 있는 공간 생성 -->
+            </tr>
+        </table>
+            <br>
+            <center>
+	
+            <input type="submit" value ="회원가입">    <!-- 액션 폼 마지막 문단-->
+            <input type="reset" value="다시 입력">
+        </center>
+        </form>
+	<h3>The ltch-NEFFEX</h3>
+	<audio src="The Itch - NEFFEX.mp3" autoplay controls>
+	
+	</audio>
+
+    </body>
+</html>

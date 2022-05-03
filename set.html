@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>setInterval</title>
+<script language="javascript">
+
+    var inter = setInterval(sayHello,1000)
+ 
+   function sayHello() {
+    
+    for(i=0;i<6;i++){
+        alert("6번반복");
+        if(i==5){
+           clearInterval(inter);
+        }
+    }
+    }
+    </script>
+    </head>
+    <body>
+    </body>
+    </html>

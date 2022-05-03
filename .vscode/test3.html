@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+	table
+	{
+		background-color: rgb(192, 255, 208);
+	}
+	tr
+	{
+		text-align: center;
+	}
+	input
+	{
+		background-color : #dae6b0;
+		width: 90px;
+		height: 90px;
+		font-size: 60px;
+	}
+	#output
+	{
+		background-color : white;
+		text-align : right;
+		width : 95%;
+	}
+	#clear
+	{
+		width : 200px;
+	}
+	
+</style>
+<script language="javascript">
+
+    var num1="";	// 입력받는 값
+	var num2="";	// 저장하는 값
+	var oper="";	// 연산자
+    function setNum(number) { //숫자 버튼 클릭시
+
+        if(number=="+/-"){	// +/- 를 누르면
+			num1*=-1;	// 양수ㆍ음수 변환
+		}else if(number=="." && num1==""){	// . 입력시 num1 값이 없을 때
+			num1="0.";
+		}else{
+			num1+=number;	// 값을 입력
+		}
+	
+		document.getElementById("output").value = num1;	// num1의 현재 값을 출력
+	}
+
+    function setOperator(op){
+        oper=op;	// 연산자 값 대입
+		num2 = num1;	// num2에 num1을 주입
+		num1 = "";	// num1 초기화
+		document.getElementById("output").value="";	// 출력부 초기화
+        }
+
+        function clearAll(){  //Clear
+        num1=""; //첫번째숫자초기화
+        num2=""; //두번째숫자초기화
+        oper="";
+        f1.reset(); //form초기화
+            }
+
+        function answer(){  // (=) 클릭시
+        var data1 = parseFloat(num1);
+        var data2 = parseFloat(num2);
+
+        switch(oper){ 
+        case "+" : 
+            num1 =  data2+data1;
+            break;
+        case "-" : 
+            num1 =  data2-data1;
+            break;            
+        case "*" : 
+            num1 =  data2*data1;
+            break;              
+        case "/" : 
+            num1 =  data2/data1;
+            break;
+        }  
+        document.getElementById("output").value = num1;	// 답 출력
+        
+    }
+        
+    </script>
+    </head>
+    <body>
+    <form id="f1">
+	<table>
+		<tr>
+			<td colspan="6"><input type="text" id="output" value="0"></td>
+		</tr>
+		<tr>
+			<td colspan="3"><input type="button" value="Clear" onclick="clearAll()" id="clear"></td>
+			<td colspan="3"><input type="button" value="=" onclick="answer()" id="equal"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="1" onclick="setNum(this.value)"></td>
+			<td><input type="button" value="2" onclick="setNum(this.value)"></td>
+			<td><input type="button" value="3" onclick="setNum(this.value)"></td>
+            <td><input type="button" value="+" onclick="setOperator(this.value)"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="4" onclick="setNum(this.value)"></td>
+			<td><input type="button" value="5" onclick="setNum(this.value)"></td>
+			<td><input type="button" value="6" onclick="setNum(this.value)"></td>
+			<td><input type="button" value="-" onclick="setOperator(this.value)"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="7" onclick="setNum(this.value)"></td>
+			<td><input type="button" value="8" onclick="setNum(this.value)"></td>
+			<td><input type="button" value="9" onclick="setNum(this.value)"></td>
+			<td><input type="button" value="*" onclick="setOperator(this.value)"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="0" onclick="setNum(this.value)"></td>
+            <td><input type="button" value="+/-" onclick="setNum(this.value)"></td>
+			<td><input type="button" value="." onclick="setNum(this.value)"></td>
+			<td><input type="button" value="/" onclick="setOperator(this.value)"></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

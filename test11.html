@@ -1,0 +1,99 @@
+<html>
+<head>
+<title></title>
+
+<script language="javascript">
+    function previewString(){
+        var objResult = document.getElementById("result");
+        var objText = document.getElementById("tbString");
+        var objFontColor = document.getElementById("fontColor");
+        var objFontSize = document.getElementById("fontSize");
+        var objOptions = document.getElementsByName("fontOptions");
+
+        var targetString = objText.value;
+        targetString = targetString.fontcolor(
+            objFontColor.options[objFontColor.selectedIndex].value
+        );
+        targetString = targetString.fontsize(
+            objFontSize.options[objFontColor.selectedIndex].value
+        );
+        if(objOptions[0].checked){
+            targetString = targetString.strike();
+
+        }
+        if(objOptions[1].checked){
+            targetString = targetString.big();
+        }
+
+        if(objOptions[2].checked){
+            targetString = targetString.small();
+        }
+        
+        if(objOptions[3].checked){
+            targetString = targetString.bold();
+        }
+
+        if(objOptions[4].checked){
+            targetString = targetString.italics();
+        }
+        
+        if(objOptions[5].checked){
+            targetString = targetString.sup();
+        }
+        
+        if(objOptions[6].checked){
+            targetString = targetString.sub();
+        }
+        
+        if(objOptions[7].checked){
+            targetString = targetString.toLowserCase();
+        }
+        
+        if(objOptions[8].checked){
+            targetString = targetString.toUpperCase();
+        }
+
+    
+
+        objResult.innerHTML = targetString;
+
+    }
+
+    </script>
+    </head>
+    <body>
+        
+            <input type="text" id="tbString">
+            <input type="button" value ="미리보기" onclick="previewString()"><br>
+
+          
+        색상: <select id="fontColor" >
+            <option value="red">빨강</option>
+            <option value="green">초록</option>
+            <option value="yellow">노랑</option>
+            
+            </select><br>
+       크기: <select id="fontSize" >
+             <option value="1">1</option>
+             <option value="2">2</option>
+             <option value="3">3</option>
+             <option value="4">4</option>
+             <option value="5">5</option>
+             <option value="6">6</option>
+             <option value="7">7</option>
+             <option value="8">8</option>
+             </select><br>
+             <input type="checkbox" name="fontOptions" value="취소선">취소선
+             <input type="checkbox" name="fontOptions" value="크게">크게
+             <input type="checkbox" name="fontOptions" value="작게">작게
+             <input type="checkbox" name="fontOptions" value="두껍게">두껍게
+             <input type="checkbox" name="fontOptions" value="기울임">기울임<br>
+             <input type="checkbox" name="fontOptions" value="위첨자">위첨자
+             <input type="checkbox" name="fontOptions" value="아래첨자">아래첨자
+             <input type="checkbox" name="fontOptions" value="소문자로">소문자로
+             <input type="checkbox" name="fontOptions" value="대문자로">대문자로<br>
+             
+             <span id="result"></span>
+
+    </body>
+    </html>

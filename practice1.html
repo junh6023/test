@@ -1,0 +1,57 @@
+<html>
+<head>
+<title></title>
+<script language="javascript">
+    function change(){
+  // 폼 객체 선택
+  var frm = document.forms['frm'];
+  
+  // 주민번호 첫째자리
+  var jumin1_val = frm['jumin1'].value;
+  
+  // 주민번호 첫쨰자리에서 년,월,일 값을 가져오기
+  var year = jumin1_val.substring(0,2);
+  var month = jumin1_val.substring(2,4);
+  var date = jumin1_val.substring(4,6);
+  
+  // 빈값 및 자리수 채크
+  if(frm['jumin1'].value == ''){
+    alert('주민번호 첫째자리를 입력하세요');
+  }else if(frm['jumin2'].value == ''){
+    alert('주민번호 끝자리를 입력하세요');
+  } else if(frm['jumin1'].value.length < 6){
+    alert('주민번호 6자리를 입력하세요');
+  }else{
+      frm['year'].value = year;
+      frm['month'].value = month;
+      frm['date'].value = date;
+      event.preventDefault();
+  }
+  
+}
+
+
+    </script>
+    </head>
+    <body>
+       
+        <form name="frm">
+          
+            <div>
+            <label for="">주민번호</label>
+              <input type="text" name="jumin1" size="7" /> -
+              <input type="text" name="jumin2" size="7"/>
+            </div>
+              
+            <div>
+              생년월일
+              <input type="text" name="year" size="4" />년
+              <input type="text" name="month" size="2" />월
+              <input type="text" name="date" size="2" />일  
+            </div>
+            <button onclick="change()">변환</button>
+          
+          </form>
+ 
+    </body>
+    </html>

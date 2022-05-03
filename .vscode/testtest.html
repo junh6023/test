@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>getElementByTagName 나라찾기</title>
+<script language="javascript">
+
+
+    function findSubject(){
+        var arrCheckbox = document.getElementsByTagName("input"); //arrCheckbox = input을 가져옴
+        var msg = ""; //문자열로 선언 
+        for( var i=0; i<arrCheckbox.length;i++){ //checkbox에 모든 길이를 뽑아내어라
+            if(arrCheckbox[i].type == "checkbox" && arrCheckbox[i].checked){ //input tag type이 checkbox이고 체크한 놈(조건)
+                msg += arrCheckbox[i].value+"\n"; //msg에 내가 체크한 값을 줄바꿈하면서 추가해라
+
+
+            }
+        }
+        alert(msg); //출력
+    }
+    </script>
+    </head>
+    <body>
+        <h2>제일좋아하는 과목은??</h2>
+        <input type="checkbox" name="subject" value="일본">일본
+        <input type="checkbox" name="subject" value=" 미국">미국
+        <input type="checkbox" name="subject" value="캐나다">캐나다
+        <input type="checkbox" name="subject" value="유럽">유럽
+        <input type="button" value="답안지 제출" onclick="findSubject()">
+    </body>
+    </html>

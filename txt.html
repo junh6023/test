@@ -1,0 +1,18 @@
+<html>
+<head>
+<title></title>
+<script language="javascript">
+        function sayHello() {
+            var textBox = document.getElementById("myName");
+            if(textBox != null) {
+                alert(textBox.value + "님 안녕하세요!");
+            }
+        }
+    </script>
+    </head>
+    <body>
+
+        <input type="text" id="myName" size="25">
+        <input type="button" value="인사하기" onclick="sayHello()">
+    </body>
+    </html>

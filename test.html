@@ -1,0 +1,31 @@
+<html>
+<head>
+<title></title>
+<script language="javascript">
+
+  
+
+
+
+    var add = function(){
+    var num1 = document.getElementByTagName("input")[0].value;
+    var num2 = document.getElementByTagName("input")[1].value;
+    var result = parseInt(num1.value) + parseInt(num2.value);
+    document.getElementsByTagName("input")[2].value=result;
+    }
+
+
+    
+
+    </script>
+    </head>
+    <body>
+
+        <input type="text"/>
+        +
+        <input type="text"/>
+        <input type="button" value="=" onclick="add()">
+        <input type="text"/>
+
+    </body>
+    </html>

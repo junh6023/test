@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>getElementByTagName 메서드로 객체 찾기</title>
+<script language="javascript">
+
+    function findSubject(){
+        var checkBox = document.getElementsByName("country"); //checkBox = country에게
+        var msg = "다음 여행지를 선택하셨습니다.\n";
+
+        for(var i=0; i<checkBox.length; i++){
+            if(checkBox[i].checked){
+            msg +=(checkBox[i].value+"\n");
+
+            }
+
+        }
+        alert(msg);
+
+    }
+
+    </script>
+    </head>
+    <body>
+        <h2>제일좋아하는 나라는??</h2>
+	<input type="checkbox" name="country" value="일본">일본
+	<input type="checkbox" name="country" value="미국">미국
+	<input type="checkbox" name="country" value="캐나다">캐나다
+    <input type="checkbox" name="country" value="유럽">유럽
+	<input type="button" value="답안지 제출" onclick="findSubject()">
+    </body>
+    </html>

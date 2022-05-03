@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>회원 가입 페이지</title>
+      <script>
+    var reg1 = /^[a-zA-Z0-9]{4,12}$/g // 아이디와 패스워드
+    var reg2 = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/gi; // 이메일
+    
+    var id = document.getElementById("id");
+    var pw = document.getElementById("pw");
+    var pw_confirm = document.getElementById("pw_confirm");
+    var email = document.getElementById("email");
+    var name = document.getElementById("name");
+    var regi_num = document.getElementById("regi_num");
+    
+function validate(){
+   if(!reg1.test(id.value)){
+      window.alert("아이디는 4~12자의 영문 대소문자와 숫자로만 입력해주세요.")
+      id.focus();
+      return false;
+   }
+   /*if(!reg1.test(pw.value)){
+      window.alert("비밀번호는 4~12자의 영문 대소문자와 숫자로만 입력해주세요.")
+      pw.focus();
+      return false;
+   }*/
+   if(pw.value != pw_confirm.value){
+      window.alert("비밀번호가 일치하지 않습니다.")
+      pw_confirm.focus();
+      return false;
+   }
+   window.alert("회원가입을 성공했습니다.")
+}
+      </script>
+   </head>
+   <body>
+      <h2 align = "center">회원 가입 페이지</h2>
+   <p></p>
+      <form>
+      <table align="center" width="800" height="500" border="2">
+         <tr>
+            <th colspan="2" bgcolor="#C8A2C8">회원 기본 정보</th>
+         </tr>
+         <tr>
+            <td align="center"><b>아이디:</b></td>
+            <td><input type="text" id="id">&nbsp;4~12자의 영문 대소문자와 숫자로만 입력</td>
+         </tr>
+         <tr>
+            <td align="center"><b>비밀번호:</b></td>
+            <td><input type="password" id="pw">&nbsp;4~12자의 영문 대소문자와 숫자로만 입력</td>
+         </tr>
+         <tr>
+            <td align="center"><b>비밀번호 확인:</b></td>
+            <td><input type="password" id="pw_confirm"></td>
+         </tr>
+         <tr>
+            <td align="center"><b>메일 주소:</b></td>
+            <td><input type="text" id="email">&nbsp;예)&nbsp;id@domain.com</td>
+         </tr>
+         <tr>
+            <td align="center"><b>이름:</b></td>
+            <td><input type="text" id="name"></td>
+         </tr>
+         <tr>
+            <th colspan="2" bgcolor="#C8A2C8">개인 신상 정보</th>
+         </tr>
+         <tr>
+            <td align="center"><b>주소:</b></td>
+            <td><input type="text" id="address">&nbsp;예)&nbsp;1234561234567</td>
+         </tr>
+         <tr>
+            <td align="center"><b>주민등록번호:</b></td>
+            <td><input type="text" id="regi_num">&nbsp;예)&nbsp;1234561234567</td>
+         </tr>
+         <tr>
+            <td align="center"><b>생일:</b></td>
+            <td><input type="text" id="year" readonly>년&nbsp;
+               <input type="text" id="month" readonly>월&nbsp;
+               <input type="text" id="year" readonly>일&nbsp;</td>
+         </tr>
+         <tr>
+            <td align="center"><b>관심 분야:</b></td>
+            <td><input type="checkbox" name="hobby" value="computer">컴퓨터
+               <input type="checkbox" name="hobby" value="internet">인터넷
+               <input type="checkbox" name="hobby" value="travel">여행
+               <input type="checkbox" name="hobby" value="movie">영화감상
+               <input type="checkbox" name="hobby" value="music">음악감상
+            </td>
+         </tr>
+         <tr>
+            <td align="center"><b>자기소개:</b></td>
+            <td><textarea name="intro" cols="80" rows="5"></textarea></td>
+         </tr>
+      </table>
+      <p></p>
+      <center>
+      <input type="button" onclick="validate()" value="회원 가입">
+      <input type="reset" value="다시 입력">
+      <!-- "location.href='mailto:seokhunv@naver.com?subject=회원가입신청'" -->
+      </center>
+      </form>
+      <script type="text/javascript" src="Register.js"></script>
+   </body>
+</html>

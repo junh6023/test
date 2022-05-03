@@ -1,0 +1,25 @@
+
+    table{
+        background-color: rgba(0, 0, 0, 0.329);
+    }
+    tr{
+        text-align: center;
+
+    }
+    input {
+        background-color: rgba(0, 140, 255, 0.623);
+        font-size : 20px;
+        width: 90px;
+		height: 90px;
+		
+    }
+    #output {
+        background-color: white;
+        width:95%;
+        text-align: right;
+
+    }
+    #clear{
+        width:200px;
+
+    }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<title>test1</title>
+
+	<script>
+
+		var showSum = function(){
+
+			var num1 = document.getElementsByTagName("input")[0].value;  // num1 = input한 값을 0번 배열에 저장
+
+			var num2 = document.getElementsByTagName("input")[1].value; //num2 = input한 값을 1번 배열에 저장
+
+			var result = parseInt(num1) + parseInt(num2); //result = 입력한 num1 , num2 값을 더함
+
+			document.getElementsByTagName("input")[2].value=result; // result 값을 2번 배열에 저장해라
+
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+	<input type="text">	
+
+	+
+
+	<input type="text">
+
+	<button onclick="showSum()">=</button>
+
+	<input type="text">
+
+</body>
+
+</html>
+
